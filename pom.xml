@@ -20,6 +20,7 @@
 
   <modules>
     <module>thymeleaf-fragment-demo</module>
+    <module>thymeleaf-layout-dialect-demo</module>
   </modules>
 
   <!--<dependencies>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/fragments/layouts/base_layout}">
+<head>
+    <title>Release Calendar</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <h1>Release Calendar</h1>
+    <br>
+    <!--    Adding table from Bootstrap -->
+    <table class="table table-striped table-hover table-bordered">
+        <tr>
+            <th>S. No.</th>
+            <th>Movie</th>
+            <th>Release Date</th>
+        </tr>
+        <tr th:each="movie, iterStat : ${movies}">
+            <td th:text="${iterStat.count}"></td>
+            <td th:text="${movie.movieName}"></td>
+            <td th:text="${#temporals.format(movie.releaseDate, 'yyyy-MM-dd')}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

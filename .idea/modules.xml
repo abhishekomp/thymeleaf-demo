@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/thymeleaf-demo.iml" filepath="$PROJECT_DIR$/thymeleaf-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/thymeleaf-fragment-demo/thymeleaf-fragment-demo.iml" filepath="$PROJECT_DIR$/thymeleaf-fragment-demo/thymeleaf-fragment-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thymeleaf-layout-dialect-demo/thymeleaf-layout-dialect-demo.iml" filepath="$PROJECT_DIR$/thymeleaf-layout-dialect-demo/thymeleaf-layout-dialect-demo.iml" />
     </modules>
   </component>
 </project>
