@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>English Bookstore</title>
+</head>
+<body>
+<!--    <h1>Welcome to Reader's Paradise Bookstore</h1>-->
+<h1 th:text="#{bookstore.heading}">English Bookstore</h1>
+<br>
+<!--    <a th:href="@{/posts}">link</a>-->
+<table border="1">
+    <tr>
+        <th>S. No.</th>
+        <th>USERID</th>
+        <th>TITLE</th>
+        <th>DATE ADDED</th>
+    </tr>
+    <tr th:each="post, iterStat : ${posts}">
+        <td th:text="${iterStat.count}"></td>
+        <td th:text="${post.userId}"></td>
+        <!--            <td th:text="${post.title}"></td>-->
+        <td>
+            <a th:href="@{'/api/posts/'+${post.id}}" th:text="${post.title}"></a>
+        </td>
+        <td th:text="${#temporals.format(post.dateAdded, 'dd/MM/yyyy')}"></td>
+        <!--            <td th:text="${#dates.format(post.dateAdded, 'dd/mm/yyyy')}"></td>-->
+        <!--            <img th:src="${'photoCat?idCat=' + cat.idCategorie}" />-->
+    </tr>
+</table>
+</body>
+</html>
