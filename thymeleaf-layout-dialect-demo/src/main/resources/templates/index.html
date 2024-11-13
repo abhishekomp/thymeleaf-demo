@@ -19,6 +19,7 @@
         <tr>
             <th>S. No.</th>
             <th>Movie</th>
+            <th>Movie Link</th>
             <th>Watched on</th>
             <th>My Rating</th>
         </tr>
@@ -32,6 +33,7 @@
             <td th:text="${#temporals.format(movie.watchedOn, 'dd/MM/yyyy')}"></td>
             <!--            <td th:text="${#dates.format(post.dateAdded, 'dd/mm/yyyy')}"></td>-->
             <!--            <img th:src="${'photoCat?idCat=' + cat.idCategorie}" />-->
+            <td th:text="${movie.myRating}">5</td>
         </tr>
     </table>
 </div>
