@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/fragments/layouts/base_layout}">
+<head>
+    <title>Movie Detail</title>
+    <style>
+        .movie_name_red {
+            color: red;
+        }
+        .movie_name_blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1>This is the page showing the detailed information for the movie</h1>
+        <h1><span class="movie_name_red" th:text="${movie.movieName}"></span></h1>
+        <h2 class="movie_name_blue" th:text="'Page showing the detailed information for the movie: ' + ${movie.movieName}">Bla bla</h2>
+    </div>
+</body>
+</html>

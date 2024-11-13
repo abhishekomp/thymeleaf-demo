@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -56,5 +57,15 @@ class MovieController {
     String getPopularMovies(Model model){
         log.info("reached to /popularMovies endpoint");
         return "most_popular_movies";
+    }
+
+    @GetMapping("/movies/{movieId}")
+    String getAllMovies(@PathVariable("movieId") long movieId, Model model){
+        log.info("reached to /movies/{} endpoint", movieId);
+        //MovieDto movie = movieRepository.findById(movieId);
+        MovieDto movie = new MovieDto(9999L, "Unknown Movie", LocalDate.of(2099, 8, 20), 9);
+        movie = movieRepository.getMovies().stream().filter(movieObj -> movieObj.getId() == movieId).findFirst().orElse(movie);
+        model.addAttribute("movie", movie);
+        return "movie-details";
     }
 }
