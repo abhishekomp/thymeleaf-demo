@@ -15,26 +15,31 @@
 
 <div layout:fragment="content">
     <!--    Adding table from Bootstrap -->
-    <table class="table table-striped table-hover table-sm">
-        <tr>
+    <table class="table table-striped table-hover table-sm caption-top">
+        <caption>Movie List</caption>
+        <thead>
+            <tr>
             <th>S. No.</th>
             <th>Movie</th>
             <th>Movie Link</th>
             <th>Watched on</th>
             <th>My Rating</th>
-        </tr>
-        <tr th:each="movie, iterStat : ${movies}">
-            <td th:text="${iterStat.count}"></td>
-            <td th:text="${movie.movieName}"></td>
-            <!--            <td th:text="${post.title}"></td>-->
-            <td>
-                <a th:href="@{'/movies/'+${movie.id}}" th:text="${movie.movieName}"></a>
-            </td>
-            <td th:text="${#temporals.format(movie.watchedOn, 'dd/MM/yyyy')}"></td>
-            <!--            <td th:text="${#dates.format(post.dateAdded, 'dd/mm/yyyy')}"></td>-->
-            <!--            <img th:src="${'photoCat?idCat=' + cat.idCategorie}" />-->
-            <td th:text="${movie.myRating}">5</td>
-        </tr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="movie, iterStat : ${movies}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${movie.movieName}"></td>
+                <!--            <td th:text="${post.title}"></td>-->
+                <td>
+                    <a th:href="@{'/movies/'+${movie.id}}" th:text="${movie.movieName}"></a>
+                </td>
+                <td th:text="${#temporals.format(movie.watchedOn, 'dd/MM/yyyy')}"></td>
+                <!--            <td th:text="${#dates.format(post.dateAdded, 'dd/mm/yyyy')}"></td>-->
+                <!--            <img th:src="${'photoCat?idCat=' + cat.idCategorie}" />-->
+                <td th:text="${movie.myRating}">5</td>
+            </tr>
+        </tbody>
     </table>
 </div>
 
